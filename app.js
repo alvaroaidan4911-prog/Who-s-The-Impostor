@@ -36,7 +36,6 @@ window.createRoom = async function() {
 window.location.href =
   "lobby.html?room=" +
   roomCode;
-  );
 }
 loadPlayers(roomCode);
 
@@ -89,7 +88,9 @@ window.joinRoom = async function() {
     name
   );
 
-  alert("Berhasil join room!");
+  window.location.href =
+  "lobby.html?room=" +
+  roomCode;
 }
 
 function loadPlayers(roomCode){
