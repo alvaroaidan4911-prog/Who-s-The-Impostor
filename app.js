@@ -38,6 +38,7 @@ window.createRoom = async function() {
     roomCode
   );
 }
+loadPlayers(roomCode);
 
 window.joinRoom = async function() {
 
@@ -89,4 +90,41 @@ window.joinRoom = async function() {
   );
 
   alert("Berhasil join room!");
+}
+
+function loadPlayers(roomCode){
+
+  const playersRef =
+    ref(
+      db,
+      "rooms/" +
+      roomCode +
+      "/players"
+    );
+
+  onValue(playersRef,(snapshot)=>{
+
+    const list =
+      document.getElementById(
+        "playerList"
+      );
+
+    list.innerHTML = "";
+
+    const players =
+      snapshot.val();
+
+    for(let key in players){
+
+      const li =
+        document.createElement("li");
+
+      li.textContent =
+        players[key];
+
+      list.appendChild(li);
+    }
+
+  });
+
 }
