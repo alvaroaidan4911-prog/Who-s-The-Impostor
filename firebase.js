@@ -5,8 +5,9 @@ import {
   ref,
   set,
   get,
-  push
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+  onValue
+}
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAxM8obPXNp-xCqjq2NpF02lxcYGGUaiuw",
