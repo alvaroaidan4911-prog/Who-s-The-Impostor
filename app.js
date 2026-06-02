@@ -33,9 +33,9 @@ window.createRoom = async function() {
     }
   );
 
-  alert(
-    "Room dibuat: " +
-    roomCode
+window.location.href =
+  "lobby.html?room=" +
+  roomCode;
   );
 }
 loadPlayers(roomCode);
